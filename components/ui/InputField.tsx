@@ -1,4 +1,4 @@
-export interface InputFormProps {
+export interface InputFieldProps {
     label: string
     placeholder: string
     value?: string
@@ -7,7 +7,7 @@ export interface InputFormProps {
     onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
 }
 
-export function InputForm({ label, placeholder, value, type, large, onChange }: InputFormProps) {
+export function InputField({ label, placeholder, value, type, large, onChange }: InputFieldProps) {
     return (
         <div className="flex flex-col gap-1.5">
             <label className="text-zinc-600 font-medium text-sm">{label}</label>

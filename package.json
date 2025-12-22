@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "anvil": "anvil --load-state tsender-deployed.json --chain-id 31337",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:unit": "vitest"
   },
   "dependencies": {
     "@base-org/account": "^2.5.1",
@@ -17,6 +19,7 @@
     "@wagmi/core": "^3.0.0",
     "@walletconnect/ethereum-provider": "^2.23.1",
     "dotenv": "^17.2.3",
+    "ethers": "^6.16.0",
     "next": "16.0.10",
     "react": "19.2.1",
     "react-dom": "19.2.1",
@@ -32,7 +35,8 @@
     "eslint": "^9",
     "eslint-config-next": "16.0.10",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.0.16"
   },
   "packageManager": "pnpm@10.26.0+sha512.3b3f6c725ebe712506c0ab1ad4133cf86b1f4b687effce62a9b38b4d72e3954242e643190fc51fa1642949c735f403debd44f5cb0edd657abe63a8b6a7e1e402",
   "description": "1.  Create the Basic App of React/Next 💚     2.  connect wallet with a nicer Rainbom-me/RainbowKit     3.  Implement htis functions.",

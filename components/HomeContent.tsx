@@ -2,11 +2,11 @@
 
 import { useState } from "react"
 import AirdropForm from "@/components/AirdropForm"
-import { useConnection } from "wagmi"
+import { useAccount } from "wagmi"
 
 export default function HomeContent() {
     const [isUnsafeMode, setIsUnsafeMode] = useState(false)
-    const { isConnected } = useConnection()
+    const { isConnected } = useAccount()
     return (
         <main>
             {isConnected ? (

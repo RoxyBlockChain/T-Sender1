@@ -1,30 +1,15 @@
 "use client";
 
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { WagmiProvider } from 'wagmi';
-import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
-import type { ReactNode } from 'react';
-import '@rainbow-me/rainbowkit/styles.css';
+import dynamic from 'next/dynamic';
 
-type props = {
-  children: ReactNode;
-};
+// Dynamically import the wallet provider without SSR
+const WalletProvider = dynamic(
+  () => import('./wallet-provider'),
+  { ssr: false }
+);
 
-import { config } from '../rainbowkitConfig';
-
-const client = new QueryClient();
-
-export function Providers(props: { children: ReactNode }) {
-  return (
-    <WagmiProvider config={config}>
-      <QueryClientProvider client={client}>
-        <RainbowKitProvider>
-         
-          {props.children}
-        </RainbowKitProvider>
-      </QueryClientProvider>
-    </WagmiProvider>
-  );
+export function Providers({ children }: { children: React.ReactNode }) {
+  return <WalletProvider>{children}</WalletProvider>;
 }
 
 export default Providers;

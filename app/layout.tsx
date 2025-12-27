@@ -9,13 +9,17 @@ export const metadata: Metadata = {
     description: "Hyper gas-optimized bulk ERC20 token transfer",
 }
 
-export default function RootLayout(props: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
     return (
         <html lang="en">
             <body>
                 <Providers>
                     <Header />
-                    {props.children}
+                    {children}
                 </Providers>    
             </body>
         </html>

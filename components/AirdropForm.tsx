@@ -123,7 +123,7 @@ export default function AirdropForm() {
 
 
     return (
-    <div>
+    <div className="flex items-center space-x-2">
         <InputField
             label="Token Address"
             placeholder="0x... Enter ERC20 token address"
